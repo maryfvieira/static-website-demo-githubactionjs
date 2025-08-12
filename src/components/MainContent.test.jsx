@@ -7,6 +7,8 @@ import MainContent from './MainContent';
 // My tests!
 // Add yet another comment
 
+/* eslint-env jest */
+/* global describe, it, expect */
 describe('MainContent', () => {
   it('should render a button', () => {
     render(<MainContent />);
