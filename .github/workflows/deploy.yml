@@ -10,9 +10,13 @@ jobs:
       - name: Get code
         uses: actions/checkout@v4
       - name: Load & Cache dependencies
+        id: load-cache
         uses: ./.github/actions/cached-deps
         with:
           caching: 'false'
+      - name: Output information
+        run: |
+          echo "Used cache: ${{ steps.load-cache.outputs.used-cache }}"
       - name: Lint code
         run: npm run lint
   test:
