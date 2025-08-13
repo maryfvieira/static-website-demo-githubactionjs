@@ -82,5 +82,7 @@ jobs:
   information:
     runs-on: ubuntu-latest
     steps:
+      - name: Get code
+        uses: actions/checkout@v4
       - name: Deploy to AWS S3
         uses: ./.github/actions/deploy-s3-javascript
